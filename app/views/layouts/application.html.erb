@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Helivo</title>
+    <meta charset="utf-8" />
+    <title>Helivo : Agence de développement web</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +13,8 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>

@@ -1,1 +1,9 @@
-// Specific CSS for your home-page
+.landing-banner {
+  background-image: url('/assets/landing_image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
