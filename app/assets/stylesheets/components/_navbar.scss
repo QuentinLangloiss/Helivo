@@ -13,3 +13,22 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-link {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  transition: ease-in-out 0.3s;
+  margin-right: 8px;
+}
+
+.nav-link:hover {
+  color: #96EFFF;
+}
+
+.brand-text {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 10px;
+}
