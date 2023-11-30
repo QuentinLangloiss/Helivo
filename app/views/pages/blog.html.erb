@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Blog</h3>
+  <h3 style="color: #7071e8; font-weight: bold; font-size: 36px; margin-top: 50px;">Blog</h3>
   <div class="choix-sujet">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -17,16 +17,27 @@
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-        <div class="card text-bg-dark" style="width: 18rem; margin-top: 40px; border-radius: 5px;">
-          <%= image_tag "banner_Article1.png", style: "border-radius: 5px 5px 0 0;" %>
+        <%= link_to article_path do %>
+          <div class="card text-bg-dark w-50" style="width: 18rem; margin-top: 40px; border-radius: 5px;">
+            <%= image_tag "banner_Article1.png", class: "img-card-blog" %>
+            <div class="card-body">
+              <h3 class="card-title" style="font-weight: 600; font-size: 24px">Maximiser la Présence en Ligne : Stratégies de Trafic Web Propulsées par l'IA</h3>
+              <p class="card-text" style="color: #7071e8; font-weight: 300;">30 novembre 2023 | SEO</p><br>
+              <p class="card-text">Dans l'ère du marketing digital en constante évolution, la présence en ligne est devenue cruciale pour la croissance des entreprises. À l'heure où le...</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="card text-bg-dark w-50" style="width: 18rem; margin-top: 40px; border-radius: 5px;">
+          <%= image_tag "banner_Article1.png", class: "img-card-blog" %>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h3 class="card-title" style="font-weight: 600; font-size: 24px">Maximiser la Présence en Ligne : Stratégies de Trafic Web Propulsées par l'IA</h3>
+            <p class="card-text" style="color: #7071e8; font-weight: 300;">30 novembre 2023 | SEO</p><br>
+            <p class="card-text">Dans l'ère du marketing digital en constante évolution, la présence en ligne est devenue cruciale pour la croissance des entreprises. À l'heure où le...</p>
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
       <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
       <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
     </div>
