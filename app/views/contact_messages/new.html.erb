@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>Contactez-nous</h2>
+      <%= form_with(model: @contact_message, url: create_contact_path, method: :post, local: true) do |form| %>
+        <div class="form-group">
+          <%= form.label :name, 'Nom' %>
+          <%= form.text_field :name, class: 'form-control', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email, 'Adresse e-mail' %>
+          <%= form.email_field :email, class: 'form-control', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :message, 'Message' %>
+          <%= form.text_area :message, class: 'form-control', rows: 5, required: true %>
+        </div>
+
+        <%= form.submit 'Envoyer', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -23,7 +23,7 @@
 }
 
 .nav-link:hover {
-  color: #FFD28F;
+  color: #7071E8;
 }
 
 .brand-text {
@@ -32,4 +32,15 @@
   font-weight: 600;
   font-size: 20px;
   margin-left: 10px;
+}
+
+.lien-service {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.lien-service:hover {
+  color: #7071E8;
 }
