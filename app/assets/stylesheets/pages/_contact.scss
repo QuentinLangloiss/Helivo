@@ -1,3 +1,12 @@
+.background-contact {
+  background-image: url("background_contactpage.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
 .contact-title {
   font-size: 2em;
   font-weight: bold;
@@ -7,12 +16,12 @@
 
 .contact-question {
   font-size: 1.5em;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .contact-texte {
   font-size: 1.5em;
   font-weight: 600;
-  color: #7071E8;
-  margin-bottom: 20px;
+  color: #fff;
+  margin-bottom: 70px;
 }
