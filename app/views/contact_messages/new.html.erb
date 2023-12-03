@@ -5,74 +5,104 @@
         <h2 class="contact-title">Contactez-nous</h2>
         <h3 class="contact-question">Une question ?<br>Un projet ?</h3>
         <h3 class="contact-texte">Nous réalisons à vos côtés <br>une application web ou mobile <br>au service de la croissance de votre business</h3>
-        <%= form_with(model: @contact_message, url: create_contact_path, method: :post, local: true) do |form| %>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group mb-5 d-flex flex-column align-items-start">
-                  <p><%= form.label :name, 'Nom' %></p>
-                  <%= form.text_field :name, class: 'form-control w-100', required: true %>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group mb-5 d-flex flex-column align-items-start">
-                  <p><%= form.label :first_name, 'Prénom' %></p>
-                  <%= form.text_field :first_name, class: 'form-control w-100', required: true %>
-                </div>
-              </div>
-            </div>
-
+        <%= simple_form_for(@contact_message, url: contact_messages_path, html: { class: 'needs-validation' }) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
           <div class="row">
             <div class="col-md-6">
-              <div class="form-group mb-5 flex-column align-items-start">
-                <p><%= form.label :email, 'Adresse e-mail' %></p>
-                <%= form.email_field :email, class: 'form-control', required: true %>
+              <div class="form-group mb-5 d-flex flex-column align-items-start">
+                <p><%= f.label :name, 'Nom' %></p>
+                <%= f.text_field :name, class: 'form-control w-100', required: true %>
+                <div class="invalid-feedback">
+                  <%= f.error :name %>
+                </div>
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="form-group mb-5 flex-column align-items-start">
-                <p><%= form.label :phone, 'Téléphone' %></p>
-                <%= form.text_field :phone, class: 'form-control', required: true %>
+              <div class="form-group mb-5 d-flex flex-column align-items-start">
+                <p><%= f.label :first_name, 'Prénom' %></p>
+                <%= f.text_field :first_name, class: 'form-control w-100', required: true %>
+                <div class="invalid-feedback">
+                  <%= f.error :first_name %>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="d-flex justify-content-center">
-              <select class="form-select mb-5 w-75" aria-label="Default select example">
-                <option selected>Votre budget</option>
-                <option value="1">inférieur à 10000 €</option>
-                <option value="2">Entre 10000 et 15000 €</option>
-                <option value="3">Entre 15000 et 50000 €</option>
-                <option value="4">supérieur à 50000 €</option>
-              </select>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group mb-5 d-flex flex-column align-items-start">
+                <p><%= f.label :email, 'Adresse e-mail' %></p>
+                <%= f.email_field :email, class: 'form-control', required: true %>
+                <div class="invalid-feedback">
+                  <%= f.error :email, message: "Adresse e-mail invalide" %>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+            <div class="form-group mb-5 d-flex flex-column align-items-start">
+              <p><%= f.label :phone, 'Téléphone' %></p>
+              <%= f.text_field :phone, class: 'form-control', required: true %>
+              <div class="invalid-feedback">
+                <%= f.error :phone, message: "Format de téléphone invalide" %>
+              </div>
             </div>
           </div>
-          <div class="form-group mb-5">
-            <p><%= form.label :message, 'Votre projet' %></p>
-            <%= form.text_area :message, class: 'form-control', rows: 5, required: true %>
+
+          <div class="d-flex justify-content-center w-100">
+            <div class="d-flex flex-column">
+              <p><%= f.label :budget, 'Budget' %></p>
+              <%= f.select :budget, ["inférieur à 10000 €", "Entre 10000 et 15000 €", "Entre 15000 et 50000 €", "supérieur à 50000 €"], {}, { class: 'form-select mb-5 w-100', required: true } %>
+              <div class="invalid-feedback">
+                <%= f.error :budget %>
+              </div>
+            </div>
           </div>
 
-          <%= form.submit 'Envoyer', class: 'btn btn-primary w-100' %>
+
+          <div class="form-group mb-5">
+            <p><%= f.label :message, 'Votre projet' %></p>
+            <%= f.text_area :message, class: 'form-control', rows: 5, required: true %>
+            <div class="invalid-feedback">
+              <%= f.error :message %>
+            </div>
+          </div>
+
+            <div class="form-actions bg-dark text-center">
+              <%= f.button :submit, "Confirm", class: "text-white" %>
+            </div>
+          </div>
         <% end %>
+
+        <% if flash[:success] %>
+          <div class="alert alert-success">
+            <%= flash[:success] %>
+          </div>
+        <% elsif flash[:error] %>
+          <div class="alert alert-danger">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            var forms = document.querySelectorAll('.needs-validation');
+
+            Array.from(forms).forEach(function(form) {
+              form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+              }, false);
+            });
+          });
+        </script>
       </div>
     </div>
   </div>
 </div>
-<%= simple_form_for(@contact_message) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :first_name %>
-    <%= f.input :email %>
-    <%= f.input :phone %>
-    <%= f.input :budget, collection: ["inférieur à 10000 €", "Entre 10000 et 15000 €", "Entre 15000 et 50000 €", "supérieur à 50000 €"]  %>
-    <%= f.input :message %>
-  </div>
-
-  <div class="form-actions bg-dark text-center">
-    <%= f.button :submit, "Confirm", class:"text-white" %>
-  </div>
-<% end %>

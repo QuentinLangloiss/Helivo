@@ -7,16 +7,11 @@ class ContactMessagesController < ApplicationController
     @contact_message = ContactMessage.new(contact_message_params)
 
     if @contact_message.save
-      begin
-        ContactMailer.contact_message(@contact_message).deliver
-        redirect_to root_path, notice: 'Message sent successfully'
-      rescue StandardError => e
-        # Gérer l'erreur d'envoi de courrier électronique ici
-        flash[:alert] = 'Error sending email. Please try again later.'
-        redirect_to new_contact_path
-      end
+      flash[:success] = "Le formulaire a été envoyé avec succès."
+      redirect_to request.referrer
     else
-      render :new
+      flash[:error] = "Erreur lors de l'envoi du formulaire. Veuillez réessayer."
+      render 'new'
     end
   end
 
