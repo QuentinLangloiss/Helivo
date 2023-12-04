@@ -13,6 +13,37 @@
 
 .section-modernisation {
   background-color: #161A30;
-  padding: 50px 20px;
-  margin-top: 100px;
+  padding: 50px 40px;
+  margin-bottom: 175px;
+  border-radius: 25px;
+}
+
+.title-section-modernisation {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 26px;
+}
+
+.text-section-modernisation {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 50px;
+  max-width: 800px;
+}
+
+.btn-section-modernisation {
+  background-color: #31304D;
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-section-modernisation:hover {
+  background-color: #fff;
+  color: #31304D;
 }

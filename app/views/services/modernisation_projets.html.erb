@@ -8,10 +8,56 @@
       <%= image_tag "services2.png", class: "img-service" %>
     </div>
   </div>
-  <div class="section-modernisation">
-    <div class="row">
 
+</div>
+
+<div class="section-modernisation">
+  <h3 class="title-section-modernisation">Pourquoi <span style="color: #7071E8;">moderniser</span> ?</h3>
+
+  <div class="text-section-modernisation">
+    <p>Votre site web est un actif vital pour votre entreprise, mais peut-être qu&#39;il est temps de passer à la vitesse supérieure. <br>Si votre site est obsolète, si vos outils internes ne répondent plus aux attentes des utilisateurs, ou si votre plateforme web ne suit pas le rythme des évolutions du marché, la modernisation est la clé.</p><br><br>
+    <p><em>Indicateurs clés que vous pourriez avoir besoin d&#39;une modernisation :</em></p>
+  </div>
+
+
+  <div class="d-flex align-items-start mb-5">
+  <button class="btn btn-section-modernisation me-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample1" style="max-width: 250px; font-family: 'Roboto', sans-serif;">
+    Votre site web ne peut plus évoluer en raison de son ancienneté.
+  </button>
+  <div class="collapse collapse-horizontal" id="collapseWidthExample1">
+    <div class="card card-body" style="width: 300px;">
+      This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
     </div>
   </div>
+</div>
+
+<div class="d-flex align-items-start mb-5">
+  <button class="btn btn-section-modernisation me-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample2" style="max-width: 250px; font-family: 'Roboto', sans-serif;">
+    Les outils web internes ne répondent plus aux attentes des utilisateurs.
+  </button>
+  <div class="collapse collapse-horizontal" id="collapseWidthExample2">
+    <div class="card card-body" style="width: 300px;">
+      This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+    </div>
+  </div>
+</div>
+
+<div class="d-flex align-items-start mb-5">
+  <button class="btn btn-section-modernisation me-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample3" style="max-width: 250px; font-family: 'Roboto', sans-serif;">
+    La plateforme web ne s'adapte pas assez rapidement et les bugs deviennent fréquents.
+  </button>
+  <div class="collapse collapse-horizontal" id="collapseWidthExample3">
+    <div class="card card-body" style="width: 300px;">
+      This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+    </div>
+  </div>
+</div>
+
+<script>
+  // Fermer les collapses précédemment ouverts lors de l'ouverture d'un nouveau collapse
+  $('.collapse-horizontal').on('show.bs.collapse', function () {
+    $('.collapse-horizontal.show').not(this).collapse('hide');
+  });
+</script>
 
 </div>
