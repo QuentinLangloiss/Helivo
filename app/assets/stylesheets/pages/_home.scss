@@ -281,3 +281,140 @@
   font-weight: bold;
   width: 40%;
 }
+
+@media (max-width: 576px) {
+  .landing-banner {
+    height: auto;
+  }
+
+  .titre {
+    font-size: 36px;
+    margin-top: 75px;
+  }
+
+  .sous-titre {
+    max-width: 100%;
+    margin: 20px 30px 0 30px;
+    font-size: 16px;
+  }
+
+  .texte-accroche {
+    font-size: 16px;
+  }
+
+  .boutoncontact {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 20px;
+    width: 70%;
+  }
+
+  .details {
+    position: relative;
+    left: initial;
+    transform: initial;
+    bottom: initial;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #565973;
+  }
+
+  .detail {
+    padding: 10px;
+  }
+
+  .conteneur-services {
+    display: block;
+  }
+
+  .service {
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  .titre-services {
+    margin-top: 30px;
+  }
+
+  .texte-service {
+    display: none;
+  }
+
+  .img-nm {
+    width: 100%;
+    height: auto;
+  }
+
+  .notre-mission {
+    padding: 50px 20px;
+    margin-top: 0;
+  }
+
+  .titre-notre-mission {
+    font-size: 22px;
+  }
+
+  .notre-mission-frame p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .texte-notre-mission {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .description-notre-mission,
+  .img-nm {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .info {
+    padding: 30px 20px;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-info-helivo,
+  .info-titre-principal {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .item img {
+    width: 70%;
+    height: auto;
+    order: -1; /* Move image above text */
+    margin-bottom: 10px; /* Add some space between image and text */
+  }
+
+  .contactus {
+    padding: 20px 20px;
+    width: 80%;
+  }
+
+  .titre-contact {
+    font-size: 24px;
+  }
+
+  .text-contact {
+    font-size: 16px;
+  }
+
+  .footer-logo p {
+    margin-right: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
